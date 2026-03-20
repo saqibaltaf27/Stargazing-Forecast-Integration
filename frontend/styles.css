@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at center, #0a0f2a 0%, #02040c 100%);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(20, 25, 45, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #ffd89b, #c7e9fb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+.moon-icon {
+    font-size: 80px;
+    text-align: center;
+    margin: 20px 0;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.phase-name {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #ffd966;
+}
+
+.stats {
+    margin: 25px 0;
+}
+
+.stat {
+    margin-bottom: 20px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #b9c8ff;
+}
+
+.progress-bar {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 8px;
+    margin: 8px 0;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #ffd966, #ffb347);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.stat-value {
+    font-size: 14px;
+    font-weight: bold;
+    float: right;
+    margin-top: -20px;
+}
+
+.score-section {
+    text-align: center;
+    margin: 25px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+}
+
+.stars {
+    color: gold;
+    font-size: 28px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.score-text {
+    font-size: 16px;
+    color: #ffd966;
+    font-weight: bold;
+}
+
+.tips-section {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 3px solid #ffd966;
+}
+
+.tips-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #e0e0e0;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #ffd89b, #c7e9fb);
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1f2e;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 216, 155, 0.3);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffd966;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.retry-btn {
+    background: #ff6b6b;
+    color: white;
+    margin-top: 15px;
+    width: auto;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        padding: 20px;
+        max-width: 90%;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    .moon-icon {
+        font-size: 60px;
+    }
+    
+    .phase-name {
+        font-size: 20px;
+    }
+    
+    .stars {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    .stat-label, .stat-value {
+        font-size: 12px;
+    }
+    
+    .tips-text {
+        font-size: 12px;
+    }
+}
